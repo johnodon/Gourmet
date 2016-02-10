@@ -7,13 +7,9 @@ ENV USER_ID="99" GROUP_ID="100" APP_NAME="Gourmet" TERM="xterm" WIDTH="1280" HEI
 # Use baseimage-docker's init system
 CMD ["/sbin/my_init"]
 
-RUN apt-get update -qq
-RUN apt-get install gourmet -qy
-
 # Install MakeMKV
-ADD ./files/startapp.sh /startapp.sh
-RUN chmod +x /startapp.sh
-
+ADD ./files /files/
+RUN chmod +x /files/install.sh && sleep 1 && /files/install.sh && rm -r /files
 
 VOLUME ["/config"]
 EXPOSE 3389 8080
