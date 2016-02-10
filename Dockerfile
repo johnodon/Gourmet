@@ -1,5 +1,5 @@
 FROM hurricane/dockergui:x11rdp1.3
-MAINTAINER tobbenb <torbjornbrekke@gmail.com>
+MAINTAINER johnodon <johnodon68@gmail.com>
 
 # User/Group Id gui app will be executed as
 ENV USER_ID="99" GROUP_ID="100" APP_NAME="Gourmet" TERM="xterm" WIDTH="1280" HEIGHT="720"
